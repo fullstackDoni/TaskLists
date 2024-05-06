@@ -1,0 +1,13 @@
+<form [formGroup]="form" (submit)="submit()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input formControlName="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title">
+    </div>
+  <br>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Description</label>
+      <textarea formControlName="description" class="form-control" id=""></textarea>
+    </div>
+  <br>
+    <button type="submit" class="btn btn-outline-success">Submit</button>
+</form>

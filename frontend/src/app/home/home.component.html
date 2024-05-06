@@ -1,0 +1,24 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <button class="btn btn-primary" (click)="filterByStatus('active')">Active</button>
+  </li>
+  <li class="list-group-item">
+    <button class="btn btn-primary" (click)="filterByStatus('completed')">Completed</button>
+  </li>
+  <li class="list-group-item">
+    <button class="btn btn-primary" (click)="filterByStatus('')">Show All</button>
+  </li>
+</ul>
+
+
+<div class="col-12">
+  <div *ngFor="let task of filteredTasks" class="card mt-4" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ task.title }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ task.status }}</h6>
+      <p class="card-text">{{ task.description }}</p>
+      <a href="#" class="btn btn-danger m-2" (click)="delete(task._id)">Delete</a>
+      <a href="#" class="btn btn-success m-2" [routerLink]="['/edit', task._id]">Edit</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<form class="form" [formGroup]="form" (ngSubmit)="submit()" *ngIf="taskData">
+    <div class="form-group mt-2">
+        <label for="title">Title:</label>
+        <input type="text" id="title" class="form-control" formControlName="title" [value]="taskData.title">
+    </div>
+  
+    <div class="form-group mt-2">
+        <label for="description">Description:</label>
+        <textarea id="description" class="form-control" formControlName="description">{{ taskData.description }}</textarea>
+    </div>
+  
+    <div class="form-group mt-2">
+        <label for="status">Status:</label>
+        <select class="form-control" id="status" formControlName="status">
+        <option value="active" [selected]="taskData.status === 'active'">Active</option>
+        <option value="completed" [selected]="taskData.status === 'completed'">Completed</option>
+        </select>
+    </div>
+  
+    <div class="mt-4">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
